@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  tor:
+    container_name: tor
+    image: domistyle/tor-browser:latest
+    environment:
+      - TZ=Asia/Kuching
+      - DARK_MODE=1
+    volumes:
+      - /data/torbrowser/config:/config
+    ports:
+      - 5800:5800
+    restart: unless-stopped
+    
